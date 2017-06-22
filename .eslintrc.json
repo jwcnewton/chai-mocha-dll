@@ -1,12 +1,15 @@
-{
-    "extends": "standard",
-    "plugins": [
-        "standard",
-        "promise"
-    ],
-	"env": {
-		"node": true,        
-		"mocha": true,       
-	},
-	"comma-dangle": ["error", "never"]
+{  
+   "extends":"standard",
+   "plugins":[  
+      "standard",
+      "promise"
+   ],
+   "env":{  
+      "node":true,
+      "mocha":true
+   },
+   "comma-dangle":[  
+      "error",
+      "never"
+   ]
 }
