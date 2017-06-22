@@ -1,8 +1,8 @@
-const chai = require('chai')
+const chai = require('chai');
 const assert = chai.assert;
 const expect = chai.expect;
 const should = chai.should();
-let jam = { types: ['Blueberry', 'Strawberry', 'Raspberry', 'Plum'] };
+let jam = {types: ['Blueberry', 'Strawberry', 'Raspberry', 'Plum']};
 
 
 describe('Jam', function () {
