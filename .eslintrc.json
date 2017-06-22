@@ -5,8 +5,8 @@
         "promise"
     ],
 	"env": {
-		"node": true,        // Node.js global variables and Node.js-specific rules.
-		"mocha": true,       // adds all of the Mocha testing global variables.
+		"node": true,        
+		"mocha": true,       
 	},
 	"comma-dangle": ["error", "never"]
 }
