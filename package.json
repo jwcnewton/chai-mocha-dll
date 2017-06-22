@@ -4,7 +4,10 @@
   "description": "DLL June",
   "main": "index.js",
   "standard": {
-    "env": [ "mocha" ]
+    "env": {
+      "node": true,
+      "mocha": true
+    }
   },
   "scripts": {
     "start": "node index.js",
