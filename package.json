@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "DLL June",
   "main": "index.js",
+  "standard": {
+    "env": [ "mocha" ]
+  },
   "scripts": {
     "start": "node index.js",
     "test": "mocha --require babel-polyfill --compilers js:babel-register ./specs/**/*.spec.js",
