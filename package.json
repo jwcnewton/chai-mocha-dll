@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node index.js",
     "test": "mocha --reporter nyan --require babel-polyfill --compilers js:babel-register ./specs/**/*.spec.js",
-    "compile": "babel src --out-file script-compiled.js"
+    "compile": "babel src --out-file script-compiled.js",
+    "cover": "istanbul cover _mocha"
   },
   "author": "Jonathan Newton",
   "license": "ISC",
@@ -30,6 +31,7 @@
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
     "gulp-babel": "^6.1.2",
-    "mocha": "*"
+    "mocha": "*",
+    "istanbul": "0.x"
   }
 }
