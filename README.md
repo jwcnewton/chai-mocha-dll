@@ -10,13 +10,13 @@
 $ npm install
 
 # Run Babel
-$ npm compile
+$ gulp
 
 # Run the tests
 $ npm test
 
 # Istanbul code coverage
-$ npm cover
+$ npm run cover
 
 
 ## Dependencies
