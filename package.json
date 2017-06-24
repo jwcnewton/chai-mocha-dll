@@ -2,15 +2,9 @@
   "name": "chai-mocha-project",
   "version": "1.0.0",
   "description": "DLL June",
-  "main": "index.js",
-  "standard": {
-    "env": {
-      "node": true,
-      "mocha": true
-    }
-  },
+  "main": "./src/server/server.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node ./src/server/server.js",
     "test": "mocha --require babel-polyfill --compilers js:babel-register ./specs/**/*.spec.js",
     "compile": "babel src --out-file script-compiled.js",
     "cover": "istanbul cover _mocha --require babel-polyfill --compilers js:babel-register ./specs/**/*.spec.js",
@@ -19,7 +13,9 @@
   "author": "Jonathan Newton",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.17.2",
     "chai": "^4.0.2",
+    "chai-http": "^3.0.0",
     "express": "^4.15.3",
     "gulp": " 3.9.1",
     "mocha": "^3.4.2"

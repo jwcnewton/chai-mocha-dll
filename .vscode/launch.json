@@ -5,25 +5,22 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Debug with mocha",
             "type": "node",
             "request": "launch",
-            "name": "Mocha Tests",
             "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
+            "stopOnEntry": false,
             "args": [
-                "-u",
-                "tdd",
-                "--timeout",
-                "999999",
-                "--colors",
-                "${workspaceRoot}/specs"
+                "--no-timeouts",
+                "${relativeFile}"
             ],
-            "internalConsoleOptions": "openOnSessionStart"
+            "cwd": "${workspaceRoot}"
         },
         {
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceRoot}/index.js"
+            "program": "${workspaceRoot}/src/server/server.js"
         }
     ]
 }

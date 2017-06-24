@@ -1,7 +1,8 @@
 module.exports = function (wallaby) {
   return {
     files: [
-      'src/**/*.js'
+      'src/**/*.js',
+      'api/**/*.js'
     ],
 
     tests: [
@@ -14,6 +15,12 @@ module.exports = function (wallaby) {
 
     compilers: {
       '**/*.js': wallaby.compilers.babel()
+    },
+    debug: true,
+    workers: {
+      initial: 1,
+      regular: 1,
+      recycle: true
     }
   };
 };
