@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>June DLL</title>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div id='main-menu'>
+        <a>
+            Click me
+        </a>
+    </div>
+    <div id='info'></div>
+
+    <script>
+        $(document).ready(function () {
+            $(function () {
+                $('#main-menu a').click(function (event) {
+                    event.preventDefault();
+                    $.ajax({
+                        url: 'https://api.joind.in/v2.1/talks/10889',
+                        data: {
+                            format: 'json'
+                        },
+                        error: function (e) {
+                            console.log(e);
+                            $('#info').html('<p>An error has occurred</p>');
+                        },
+                        dataType: 'jsonp',
+                        success: function (data) {
+                            var $title = $('<h1>').text(data.talks[0].talk_title);
+                            var $description = $('<p>').text(data.talks[0].talk_description);
+                            $('#info')
+                                .append($title)
+                                .append($description);
+                        },
+                        type: 'GET'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

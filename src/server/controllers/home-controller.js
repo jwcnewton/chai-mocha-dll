@@ -6,21 +6,24 @@ module.exports = function (app) {
     // Gets
     app.get('/', (req, res) => {
         res.status(200).send('ok');
+        return;
     });
 
     app.get('/index', (req, res) => {
         res.sendFile(path.join(__dirname + '/index.html'));
+        return;
     });
 
     app.get('/showJam', (req, res) => {
         res.send(jamData);
+        return;
     });
 
     // Posts
     app.post('/addJam', (req, res) => {
         let newJam = req.body.jam;
 
-        if (newJam) {
+        if (newJam && isString(newJam)) {
             jamData.types.push(newJam);
             res.status(200).send('Added');
             return;
@@ -30,3 +33,7 @@ module.exports = function (app) {
         return;
     });
 };
+
+function isString(val) {
+   return val.constructor === String;
+}

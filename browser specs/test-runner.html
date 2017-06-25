@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mocha Test Runner</title>
+    <link rel="stylesheet" href="../node_modules/mocha/mocha.css">
+  </head>
+  <body>
+    <!--reporter div id-->
+    <div id="mocha"></div>
+    <!--3rd party scripts here-->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+    <script src="../node_modules/mocha/mocha.js"></script>
+    <script src="../node_modules/chai/chai.js"></script>
+
+    <!--test interface-->
+    <script>mocha.setup('bdd')</script>
+
+    <!--scripts here-->
+    <script src="./refactored-bad.js"></script>
+
+    <!--specs here-->
+    <script src="./refactored-bad.spec.js"></script>
+    <script>
+      mocha.run();
+    </script>
+  </body>
+</html>

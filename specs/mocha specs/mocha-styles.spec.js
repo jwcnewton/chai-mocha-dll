@@ -1,10 +1,17 @@
+// Require node modules
 const chai = require('chai');
+
+// Assign variables to chai exports
 const assert = chai.assert;
 const expect = chai.expect;
+
+// Init should
 const should = chai.should();
+
+// Pull in local data source
 const jamData = require('../../api/jam-data').jam;
 
-
+// Suite
 describe('Jam', () => {
 
     describe('Should examples', () => {
@@ -40,4 +47,5 @@ describe('Jam', () => {
                 .that.does.not.include('Peanut Butter');
         });
     });
+
 });

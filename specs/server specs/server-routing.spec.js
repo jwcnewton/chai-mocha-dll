@@ -61,6 +61,36 @@ describe('AddJam', () => {
       });
   });
 
+  it('Should return bad request on null jam', (done) => {
+    let newJam = null;
+
+    chai.request(server)
+      .post('/addJam')
+      .send({jam: newJam})
+      .end((err, res) => {
+
+        res.should.have.status(400);
+        err.message.should.contain('Bad Request');
+
+        done();
+      });
+  });
+
+    it('Should return bad request on numeric jam', (done) => {
+    let newJam = 1234;
+
+    chai.request(server)
+      .post('/addJam')
+      .send({jam: newJam})
+      .end((err, res) => {
+
+        res.should.have.status(400);
+        err.message.should.contain('Bad Request');
+
+        done();
+      });
+  });
+
   it('Should return bad request on null body', (done) => {
     chai.request(server)
       .post('/addJam')
