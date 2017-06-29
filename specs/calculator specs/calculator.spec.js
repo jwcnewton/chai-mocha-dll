@@ -25,8 +25,8 @@ describe('safeAddition generated tests positive parameters', () => {
         {params: {a: 122, b: 78}, expected: 200},
         {params: {a: 232, b: 7}, expected: 239}
     ];
-
-    specs.forEach(function (spec) {
+    // Test generation
+    specs.forEach((spec) => {
         it(`correctly adds ${spec.params.a} to ${spec.params.b}`, () => {
             let result = calculator.safeAddition(spec.params.a, spec.params.b);
             result.should.equal(spec.expected);
@@ -40,9 +40,9 @@ describe('safeAddition generated tests nagative parameters', () => {
         {params: {a: undefined, b: 2}, expected: 'undefined is not a number'},
         {params: {a: 23, b: 'acd'}, expected: 'acd is not a number'}
     ];
-
-    specs.forEach(function (spec) {
-        it(`correctly adds ${spec.params.a} to ${spec.params.b}`, function () {
+    // Test generation
+    specs.forEach((spec) => {
+        it(`correctly adds ${spec.params.a} to ${spec.params.b}`, () => {
             expect(() => {
                 calculator.safeAddition(spec.params.a, spec.params.b);
             }).to.throw(spec.expected);

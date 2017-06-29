@@ -13,11 +13,11 @@ const jamData = require('../../api/jam-data').jam;
 
 // Suite
 describe('Jam', () => {
-
+    // Spec-set
     describe('Should examples', () => {
-
+        // Spec
         it('Spec', () => {
-
+            // Should
             jamData.should.be.an('object');
             jamData.should.have.property('types').with.lengthOf(4);
             jamData.types.should.be.an('array');
@@ -29,6 +29,7 @@ describe('Jam', () => {
     describe('Assert examples', () => {
 
         it('Spec', () => {
+            // Assert
             assert.isObject(jamData, 'Jam is an object');
             assert.property(jamData, 'types');
             assert.isArray(jamData.types, 'Jam types is an array');
@@ -40,6 +41,7 @@ describe('Jam', () => {
     describe('Expect examples', () => {
 
         it('Spec', () => {
+            // Expect
             expect(jamData).to.be.an('object');
             expect(jamData).to.have.property('types').with.lengthOf(4);
             expect(jamData.types).to.be.an('array');

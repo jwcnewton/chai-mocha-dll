@@ -76,7 +76,7 @@ describe('AddJam', () => {
       });
   });
 
-    it('Should return bad request on numeric jam', (done) => {
+  it('Should return bad request on numeric jam', (done) => {
     let newJam = 1234;
 
     chai.request(server)
