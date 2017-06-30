@@ -8,11 +8,6 @@ chai.use(sinonChai);
 
 
 describe('getSwitch', () => {
-
-    beforeEach(() => {
-        sinon.restore(lightSwitch);
-    });
-
     it('should return a boolean', () => {
         // Arrange
         let getSwitchSpy = sinon.spy(lightSwitch, 'getSwitch');
@@ -29,7 +24,7 @@ describe('getSwitch', () => {
 describe('flickSwitch', () => {
 
     beforeEach(() => {
-        sinon.restore(lightSwitch);
+        lightSwitch.getSwitch.restore();
     });
 
     it('should call getSwitch once', () => {
@@ -58,7 +53,7 @@ describe('flickSwitch', () => {
 describe('returnSwitchStatusAsString', () => {
 
     beforeEach(() => {
-        sinon.restore(lightSwitch);
+        lightSwitch.getSwitch.restore();
     });
 
     it('should return string true if getSwitch returns true', () => {

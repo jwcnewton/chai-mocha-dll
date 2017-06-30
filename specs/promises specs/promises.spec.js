@@ -2,17 +2,23 @@ const chai = require('chai');
 const sinonChai = require('sinon-chai');
 let promisesExample = require('../../src/misc/promiseExample');
 let chaiAsPromised = require('chai-as-promised');
+
 chai.use(chaiAsPromised);
 chai.should();
-var expect = chai.expect;
 
 // Suite
 describe('longRunningAddition', () => {
+
+});
+
+// Suite
+describe('isNumber', () => {
     // Spec
-    xit('should eventually return the sum of 2 numbers', () =>  {
-        // Arrange
-        let expectedResult = 4;
+    it('should eventually resolve the sum of 2 numbers', (done) =>  {
         // Act
-        promisesExample.longRunningAddition.should.eventually.equal(expectedResult);
+        promisesExample.isNumber('abc')
+            .should.be.rejectedWith(Error)
+            .and.eventually.have.property('message').equal('Not a number')
+            .notify(done);
     });
 });

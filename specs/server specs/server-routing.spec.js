@@ -8,16 +8,7 @@ let jamData = require('../../api/jam-data').jam;
 chai.use(chaiHttp);
 
 describe('Root', () => {
-  it('Should return 200 on valid request', (done) => {
-    chai.request(server)
-      .get('/')
-      .end((err, res) => {
 
-        res.should.have.status(200);
-
-        done();
-      });
-  });
 });
 
 describe('Index', () => {
