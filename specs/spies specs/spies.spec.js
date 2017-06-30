@@ -1,7 +1,7 @@
 const chai = require('chai');
 const sinon = require('sinon');
 const sinonChai = require('sinon-chai');
-var lightSwitch = require('../../src/misc/spyExample');
+let lightSwitch = require('../../src/misc/spyExample');
 
 chai.should();
 chai.use(sinonChai);

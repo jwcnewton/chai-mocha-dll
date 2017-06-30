@@ -8,6 +8,16 @@ let jamData = require('../../api/jam-data').jam;
 chai.use(chaiHttp);
 
 describe('Root', () => {
+  it('Should return 200 on valid request', (done) => {
+    chai.request(server)
+      .get('/')
+      .end((err, res) => {
+
+        res.should.have.status(200);
+
+        done();
+      });
+  });
 
 });
 
@@ -43,7 +53,7 @@ describe('AddJam', () => {
 
     chai.request(server)
       .post('/addJam')
-      .send({jam: newJam})
+      .send({ jam: newJam })
       .end((err, res) => {
 
         res.should.have.status(200);
@@ -57,7 +67,7 @@ describe('AddJam', () => {
 
     chai.request(server)
       .post('/addJam')
-      .send({jam: newJam})
+      .send({ jam: newJam })
       .end((err, res) => {
 
         res.should.have.status(400);
@@ -72,7 +82,7 @@ describe('AddJam', () => {
 
     chai.request(server)
       .post('/addJam')
-      .send({jam: newJam})
+      .send({ jam: newJam })
       .end((err, res) => {
 
         res.should.have.status(400);
@@ -93,5 +103,24 @@ describe('AddJam', () => {
 
         done();
       });
+  });
+});
+
+describe('404', () => {
+  let invalidEnpoints = [
+    {endPoint: '=2', expected: 404},
+    {endPoint: 'admin', expected: 404},
+    {endPoint: '2323', expected: 404}
+  ];
+
+  invalidEnpoints.forEach((endPoint) => {
+    it('Returns 404 when navigating to :' + endPoint.endPoint, (done) => {
+      chai.request(server)
+        .get(`/${endPoint.endPoint}`)
+        .end((err, res) => {
+          res.should.have.status(endPoint.expected);
+          done();
+        });
+    });
   });
 });

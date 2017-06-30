@@ -1,4 +1,4 @@
-var lightSwitch =  {
+let lightSwitch =  {
 
     switchStatus: false,
 
@@ -12,7 +12,7 @@ var lightSwitch =  {
 
     returnSwitchStatusAsString: function () {
         try {
-            if (this.getSwitch() === true) {
+            if (this.getSwitch()) {
                 return 'Switch on';
             } else {
                 return 'Switch off';
